@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkinsnextapp-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkinsnextapp-app
+  template:
+    metadata:
+      labels:
+        app: jenkinsnextapp-app
+    spec:
+      containers:
+      - name: jenkinsnextapp-container
+        image: sirisha501/jenkinsnextapp:v1.0
+        ports:
+        - containerPort: 8081
